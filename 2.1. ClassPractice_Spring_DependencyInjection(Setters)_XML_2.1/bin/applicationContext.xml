@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Root element for the Spring Bean Configuration -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Setting up bean definitions for Address and Employee -->
+
+    <!-- Bean definition for Address -->
+    <bean id="address" class="com.gl.springcore.setterinjection.Address">
+        <!-- Setting properties for Address -->
+        <property name="flatNo" value="152"></property>
+        <property name="appartmentName" value="Star Castle"></property>
+        <property name="area" value="Madhapur"></property>
+        <property name="city" value="Hyderabad"></property>
+    </bean>
+    
+    <!-- Bean definition for Employee -->
+    <bean id="employee" class="com.gl.springcore.setterinjection.Employee">
+        <!-- Setting properties for Employee -->
+        <property name="iD" value="1001"></property>
+        <property name="name" value="Yashna"></property>
+        <!-- Injecting the Address bean reference into the Employee bean -->
+        <property name="address" ref="address"></property>
+    </bean>
+
+</beans>

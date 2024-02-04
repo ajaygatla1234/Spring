@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Root element for the Spring Bean Configuration -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Setting up bean definitions for Hi_World and Hello_World -->
+
+    <!-- Bean definition for Hi_World -->
+    <bean id="hiWorld" class="com.gl.springcore.Hi_World">
+        <!-- Setting the wish property for Hi_World bean -->
+        <property name="wish" value="Hi World"></property>
+    </bean>
+    
+    <!-- Bean definition for Hello_World -->
+    <bean id="helloWorld" class="com.gl.springcore.Hello_World">
+        <!-- Setting the wish property for Hello_World bean -->
+        <property name="wish" value="Hello World"></property>
+    </bean>
+
+</beans>

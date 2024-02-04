@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <!-- Define dependency beans -->
+    
+    <!-- Bean for RevisionTip class -->
+    <bean id="revisionTip" 
+    	  class="com.gl.serviceimplementation.RevisionTip">
+    </bean>
+    
+    <!-- Bean for SolvePreviousYearsPapers class -->
+    <bean id="solvePreviousYearsPapers" 
+    	  class="com.gl.serviceimplementation.SolvePreviousYearsPapers">
+    </bean>
+
+	<!-- Setting up bean definitions for Teacher implementations -->
+	
+	<!-- Bean for MathTeacher with constructor injection using SolvePreviousYearsPapers -->
+	<bean 
+		id="mathTeacher" 
+		class="com.gl.serviceimplementation.MathTeacher">
+		
+		<!-- Setup constructor injection with reference to solvePreviousYearsPapers bean -->
+		<constructor-arg ref="solvePreviousYearsPapers"/>
+	</bean>
+	
+	<!-- Bean for HindiTeacher with constructor injection using RevisionTip -->
+	<bean id="hindiTeacher" 
+		  class="com.gl.serviceimplementation.HindiTeacher">
+		  
+		  <!-- Setup constructor injection with reference to revisionTip bean -->
+		  <constructor-arg ref="revisionTip"/>
+	</bean>
+</beans>

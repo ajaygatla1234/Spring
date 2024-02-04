@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Root element for the Spring Bean Configuration -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Setting up bean definitions for MathTeacher, HindiTeacher, and GKTeacher -->
+
+    <!-- Bean definition for MathTeacher with a singleton scope (default scope) -->
+    <bean id="mathTeacher" class="com.gl.serviceimplementation.MathTeacher" scope="singleton"></bean>
+
+    <!-- Bean definition for HindiTeacher with a prototype scope -->
+    <bean id="hindiTeacher" class="com.gl.serviceimplementation.HindiTeacher" scope="prototype"></bean>
+
+    <!-- Bean definition for GKTeacher with init-method and destroy-method specified -->
+    <bean id="gkTeacher" class="com.gl.serviceimplementation.GKTeacher" init-method="doInitialJob" destroy-method="doFinalJob"></bean>
+
+</beans>
