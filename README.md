@@ -1,1 +1,1 @@
-*** Add the Required JAR files and XML File in the Projects wherever Required ***
+*** Add the Required JAR files from Spring_Libraries Folder and applicationContext.xml File in the Projects wherever Required ***
