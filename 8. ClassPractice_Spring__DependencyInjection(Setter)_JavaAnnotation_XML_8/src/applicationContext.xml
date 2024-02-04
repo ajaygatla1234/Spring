@@ -1,0 +1,27 @@
+<!-- applicationContext.xml -->
+
+<!-- Define the root element for Spring Beans configuration -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Enable component scanning for the specified package -->
+    <context:component-scan base-package="com.example"/>
+
+    <!-- Define the SpellChecker bean -->
+    <!-- The Spell_Checker bean is defined with the id "spellChecker" and the class "com.gl.springcore.autowired.Spell_Checker" -->
+    <bean id="spellChecker" class="com.gl.springcore.autowired.Spell_Checker"/>
+
+    <!-- Define the TextEditor bean with setter injection using @Autowired -->
+    <!-- The Text_Editor bean is defined with the id "textEditor" and the class "com.gl.springcore.autowired.Text_Editor" -->
+    <!-- The spellChecker property will be injected by the setter method, and you don't need to explicitly set it here -->
+    <bean id="textEditor" class="com.gl.springcore.autowired.Text_Editor">
+        <!-- The spellChecker property will be automatically injected by the setter method in the Text_Editor class -->
+        <!-- You don't need to explicitly set it here -->
+    </bean>
+
+</beans>
